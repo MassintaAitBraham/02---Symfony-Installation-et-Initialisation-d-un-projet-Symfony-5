@@ -20,7 +20,7 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/programs/{id}", methods={"GET"}, name="program_show")
+     * @Route("/programs/{id}", requirements={"id"="\d+"}, methods={"GET"}, name="program_show")
      */
     public function show(int $id): Response
     {
