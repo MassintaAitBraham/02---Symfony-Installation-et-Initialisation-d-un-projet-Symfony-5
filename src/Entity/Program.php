@@ -23,9 +23,14 @@ class Program
     private $Title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
+
     private $summary;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $poster;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class)
@@ -59,6 +64,16 @@ class Program
     {
         $this->summary = $summary;
 
+        return $this;
+    }
+
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+    public function setPoster(?string $poster): self
+    {
+        $this->poster = $poster;
         return $this;
     }
 
